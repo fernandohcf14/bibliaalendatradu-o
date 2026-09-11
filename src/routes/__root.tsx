@@ -105,6 +105,21 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="pt-BR">
       <head>
         <HeadContent />
+        
+        {/* 1. Google Tag (gtag.js) */}
+        <script async src="https://googletagmanager.com"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-PF4XX5VB91');
+            `,
+          }}
+        />
+
+        {/* 2. Meta Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
             __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '938653842041574');var pvId='pv_'+Date.now()+'_'+Math.random().toString(36).slice(2);window.__metaPvId=pvId;fbq('track', 'PageView', {}, {eventID: pvId});`,
