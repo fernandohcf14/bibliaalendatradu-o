@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 
+import markAsset from "../assets/abba-mark.png.asset.json";
 import kitCutout from "../assets/abba-kit-cutout.png";
 import { Testimonials } from "../components/Testimonials";
 
