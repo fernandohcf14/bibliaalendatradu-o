@@ -116,32 +116,6 @@ function LandingPage() {
           <p className="fade-up fade-up-delay-2 mt-6 max-w-2xl text-lg leading-relaxed text-forest-foreground/85 sm:text-xl">
             Seu primeiro contato com o Hebraico Bíblico — mesmo começando do zero.
           </p>
-          <h1 className="font-display fade-up fade-up-delay-1 mt-4 max-w-3xl text-4xl font-semibold leading-[1.08] sm:text-6xl lg:text-7xl">
-            Descubra o que existe por trás das palavras da Bíblia.
-          </h1>
-          <p className="fade-up fade-up-delay-2 mt-6 max-w-2xl text-lg leading-relaxed text-forest-foreground/85 sm:text-xl">
-            Seu primeiro contato com o Hebraico Bíblico — mesmo começando do zero.
-          </p>
-          <img
-            src={kitCutout}
-            alt="Kit Bíblia Além da Tradução — produto principal e bônus"
-            className="fade-up fade-up-delay-2 mt-10 w-full max-w-4xl object-contain"
-            width={1376}
-            height={768}
-          />
-          <p className="fade-up fade-up-delay-2 mt-8 max-w-xl text-base leading-relaxed text-forest-foreground/65">
-            Você já leu uma passagem e pensou: “Será que essa palavra significa
-            exatamente isso no original?” Agora você pode começar a descobrir
-            esse universo sem faculdade de Teologia, sem dominar hebraico e sem
-            gramáticas complicadas.
-          </p>
-          <div className="fade-up fade-up-delay-3 mt-9">
-            <CtaButton>Quero descobrir a Bíblia além da tradução</CtaButton>
-            <p className="mt-4 text-sm text-forest-foreground/60">
-              Pagamento único • Acesso imediato • R$27,90
-            </p>
-          </div>
-        </div>
 
       </header>
 
