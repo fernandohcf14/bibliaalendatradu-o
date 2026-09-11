@@ -1,0 +1,174 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-forest-foreground: var(--forest-foreground);
+  --color-copper: var(--copper);
+  --color-copper-foreground: var(--copper-foreground);
+  --color-copper-soft: var(--copper-soft);
+  --color-cream: var(--cream);
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.962 0.014 95);
+  --foreground: oklch(0.27 0.035 160);
+  --card: oklch(0.985 0.01 95);
+  --card-foreground: oklch(0.27 0.035 160);
+  --popover: oklch(0.985 0.01 95);
+  --popover-foreground: oklch(0.27 0.035 160);
+  --primary: oklch(0.32 0.05 160);
+  --primary-foreground: oklch(0.96 0.015 95);
+  --secondary: oklch(0.92 0.02 95);
+  --secondary-foreground: oklch(0.3 0.04 160);
+  --muted: oklch(0.93 0.018 95);
+  --muted-foreground: oklch(0.48 0.03 140);
+  --accent: oklch(0.68 0.11 55);
+  --accent-foreground: oklch(0.22 0.03 60);
+  --destructive: oklch(0.577 0.2 27);
+  --destructive-foreground: oklch(0.97 0.01 95);
+  --border: oklch(0.87 0.02 110);
+  --input: oklch(0.87 0.02 110);
+  --ring: oklch(0.68 0.11 55);
+  --forest: oklch(0.30 0.048 160);
+  --forest-deep: oklch(0.24 0.04 162);
+  --forest-foreground: oklch(0.95 0.015 95);
+  --copper: oklch(0.68 0.11 55);
+  --copper-foreground: oklch(0.22 0.03 60);
+  --copper-soft: oklch(0.78 0.08 60);
+  --cream: oklch(0.962 0.014 95);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .hebrew {
+    font-family: "Times New Roman", "Frank Ruehl", serif;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 100%;
+    background: linear-gradient(135deg, oklch(0.72 0.11 58), oklch(0.62 0.11 50));
+    color: oklch(0.2 0.03 55);
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 1.1rem 2.2rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 30px -8px oklch(0.6 0.12 55 / 0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    text-align: center;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 16px 40px -10px oklch(0.6 0.12 55 / 0.65);
+  }
+
+  .arch-frame {
+    border-radius: 9999px 9999px 1rem 1rem;
+  }
+
+  .fade-up {
+    animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .fade-up-delay-1 { animation-delay: 0.12s; }
+  .fade-up-delay-2 { animation-delay: 0.24s; }
+  .fade-up-delay-3 { animation-delay: 0.36s; }
+
+  details.faq summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details.faq[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  @media (max-width: 639px) {
+    .cta-button {
+      gap: 0.5rem;
+      padding: 1rem 1.25rem;
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
