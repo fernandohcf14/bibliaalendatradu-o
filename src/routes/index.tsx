@@ -14,7 +14,7 @@ import {
   X,
 } from "lucide-react";
 
-import markAsset from "../assets/abba-mark.png.asset.json";
+import abbaMark from "../assets/abba-mark.png";
 import kitCutout from "../assets/abba-kit-cutout.png";
 import { Testimonials } from "../components/Testimonials";
 
@@ -367,7 +367,7 @@ function LandingPage() {
       <section className="bg-forest py-20 text-forest-foreground lg:py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <img
-            src={markAsset.url}
+            src={abbaMark}
             alt="Logo ABBA PALAVRA"
             className="mx-auto h-16 w-auto object-contain brightness-0 invert"
             loading="lazy"
