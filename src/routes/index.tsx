@@ -109,15 +109,12 @@ function LandingPage() {
       {/* HERO */}
       <header className="relative overflow-hidden bg-forest-deep text-forest-foreground">
         <div className="mx-auto flex max-w-4xl flex-col items-center px-6 pb-20 pt-12 text-center lg:pb-28">
-          <img
-            src={markAsset.url}
-            alt="ABBA PALAVRA — marca"
-            className="fade-up h-20 w-auto object-contain brightness-0 invert"
-            width={256}
-            height={256}
-          />
-          <p className="eyebrow fade-up fade-up-delay-1 mt-8 text-copper-soft">
-            Bíblia Além da Tradução
+          
+          <h1 className="font-display fade-up fade-up-delay-1 mt-4 max-w-3xl text-4xl font-semibold leading-[1.08] sm:text-6xl lg:text-7xl">
+            Descubra o que existe por trás das palavras da Bíblia.
+          </h1>
+          <p className="fade-up fade-up-delay-2 mt-6 max-w-2xl text-lg leading-relaxed text-forest-foreground/85 sm:text-xl">
+            Seu primeiro contato com o Hebraico Bíblico — mesmo começando do zero.
           </p>
           <h1 className="font-display fade-up fade-up-delay-1 mt-4 max-w-3xl text-4xl font-semibold leading-[1.08] sm:text-6xl lg:text-7xl">
             Descubra o que existe por trás das palavras da Bíblia.
