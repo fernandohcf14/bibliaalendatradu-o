@@ -418,7 +418,7 @@ function LandingPage() {
               </span>
             </div>
             <p className="font-display mt-2 text-6xl font-semibold text-copper-soft sm:text-7xl">
-              R$ 27<span className="text-4xl">,90</span>
+              R$ 17<span className="text-4xl">,90</span>
             </p>
             <div className="mt-8">
               <CtaButton>Quero começar agora</CtaButton>
