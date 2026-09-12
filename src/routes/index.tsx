@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Seu primeiro contato com o Hebraico Bíblico — mesmo começando do zero. Descubra as palavras por trás da tradução. Pagamento único de R$ 27,90.",
+          "Seu primeiro contato com o Hebraico Bíblico — mesmo começando do zero. Descubra as palavras por trás da tradução. Pagamento único de R$ 17,90.",
       },
       { property: "og:title", content: "Bíblia Além da Tradução — ABBA PALAVRA" },
       {
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const CHECKOUT_URL = "https://pay.cakto.com.br/3zswdss_1094286?coupon=50off";
+const CHECKOUT_URL = "https://pay.cakto.com.br/3zswdss_1094286";
 
 declare global {
   interface Window {
@@ -132,7 +132,7 @@ function LandingPage() {
           <div className="fade-up fade-up-delay-3 mt-9">
             <CtaButton>Quero descobrir a Bíblia além da tradução</CtaButton>
             <p className="mt-4 text-sm text-forest-foreground/60">
-              Pagamento único • Acesso imediato • R$27,90
+              Pagamento único • Acesso imediato • R$17,90
             </p>
           </div>
         </div>
