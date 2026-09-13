@@ -1,0 +1,260 @@
+:root {
+  --abba-green-950: #071c17;
+  --abba-green-900: #0b2a22;
+  --abba-green-800: #113c31;
+  --abba-green-700: #185243;
+  --abba-cream: #f7f2e8;
+  --abba-cream-2: #efe6d7;
+  --abba-gold: #c69a4b;
+  --abba-gold-soft: #e3c888;
+  --abba-copper: #a85f39;
+  --abba-ink: #1d2a26;
+  --abba-muted: #66726d;
+  --abba-line: rgba(18, 62, 50, 0.14);
+  --abba-shadow: 0 30px 80px rgba(3, 19, 15, 0.16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+body, button, a { font-family: "Manrope", sans-serif; }
+.abba-page { min-height: 100vh; overflow-x: hidden; background: var(--abba-cream); color: var(--abba-ink); }
+.abba-page h1, .abba-page h2, .abba-page h3, .abba-page blockquote { font-family: "Cormorant Garamond", Georgia, serif; }
+.abba-page p { line-height: 1.75; }
+.abba-hebrew, .abba-hebrew-small, [dir="rtl"] { font-family: "Noto Serif Hebrew", "Times New Roman", serif; }
+.abba-container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; position: relative; z-index: 2; }
+.abba-container.narrow { width: min(860px, calc(100% - 40px)); }
+.abba-section { padding: 92px 0; }
+.centered { text-align: center; }
+
+.abba-hero { min-height: 760px; position: relative; background: radial-gradient(circle at 76% 35%, #173f33 0, var(--abba-green-950) 47%, #061713 100%); color: white; overflow: hidden; }
+.abba-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3,17,13,.97) 0%, rgba(3,17,13,.87) 43%, rgba(3,17,13,.22) 100%); }
+.abba-hero-art { position: absolute; inset: 0 0 0 auto; width: 54%; height: 100%; object-fit: cover; opacity: .56; filter: saturate(.9) contrast(1.03); }
+.abba-grain { position: absolute; inset: 0; opacity: .12; z-index: 1; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"); }
+.abba-nav { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 4; }
+.abba-brand { display: inline-flex; align-items: center; gap: 12px; color: white; }
+.abba-brand-mark { width: 31px; height: 42px; object-fit: contain; filter: brightness(0) invert(1); }
+.abba-brand div { display: grid; }
+.abba-brand strong { font-family: "Cormorant Garamond", serif; font-size: 21px; letter-spacing: .08em; font-weight: 600; }
+.abba-brand span { font-size: 10px; opacity: .62; letter-spacing: .08em; }
+.abba-nav-link { display: inline-flex; align-items: center; gap: 5px; color: var(--abba-gold-soft); text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: .1em; }
+.abba-hero-grid { width: min(1180px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: 1.07fr .93fr; gap: 70px; align-items: center; min-height: 650px; position: relative; z-index: 3; padding-bottom: 52px; }
+.abba-kicker, .abba-section-label { color: var(--abba-copper); text-transform: uppercase; font-weight: 800; letter-spacing: .18em; font-size: 11px; }
+.abba-kicker { color: var(--abba-gold-soft); }
+.abba-section-label.light { color: var(--abba-gold-soft); }
+.abba-hero h1 { margin: 18px 0 20px; font-size: clamp(48px, 5.6vw, 80px); line-height: .98; font-weight: 600; letter-spacing: -.025em; max-width: 760px; }
+.abba-hero h1 em { color: var(--abba-gold-soft); font-weight: 500; }
+.abba-lead { font-size: 18px; max-width: 690px; color: rgba(255,255,255,.8); }
+.abba-lead strong { color: white; }
+.abba-hero-points { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 28px 0; color: rgba(255,255,255,.72); font-size: 12px; }
+.abba-hero-points span { display: inline-flex; align-items: center; gap: 7px; }
+.abba-hero-points svg { color: var(--abba-gold-soft); }
+.abba-hero-buy { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 32px; }
+.abba-cta { min-height: 54px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; padding: 0 26px; text-decoration: none; background: linear-gradient(135deg, #e4c984, #bd8c38); color: #163127; font-weight: 800; font-size: 14px; box-shadow: 0 14px 35px rgba(191, 143, 56, .28); transition: transform .2s ease, box-shadow .2s ease; }
+.abba-cta:hover { transform: translateY(-2px); box-shadow: 0 18px 45px rgba(191, 143, 56, .36); }
+.abba-cta-light { background: white; box-shadow: none; }
+.abba-price-note { display: grid; gap: 2px; }
+.abba-price-note strong { font-family: "Cormorant Garamond", serif; font-size: 31px; color: var(--abba-gold-soft); line-height: 1; }
+.abba-price-note span { font-size: 10px; color: rgba(255,255,255,.55); }
+.abba-hero-visual { min-height: 580px; display: grid; place-items: center; position: relative; }
+.abba-book { width: min(500px, 100%); position: relative; z-index: 3; filter: drop-shadow(0 45px 45px rgba(0,0,0,.42)); animation: abbaFloat 6s ease-in-out infinite; }
+.abba-halo { position: absolute; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, rgba(220,188,120,.17), transparent 67%); z-index: 1; }
+.abba-word-card { position: absolute; z-index: 4; padding: 12px 18px; border: 1px solid rgba(229,207,157,.35); background: rgba(7,28,23,.68); backdrop-filter: blur(10px); border-radius: 16px; box-shadow: 0 18px 45px rgba(0,0,0,.22); display: grid; text-align: center; }
+.abba-word-card span { font-size: 28px; color: var(--abba-gold-soft); }
+.abba-word-card small { text-transform: uppercase; letter-spacing: .2em; font-size: 8px; color: rgba(255,255,255,.62); }
+.card-one { left: 2%; top: 21%; }.card-two { right: -2%; bottom: 17%; }
+@keyframes abbaFloat { 50% { transform: translateY(-10px); } }
+
+.abba-identification { background: #f7f2e8; }
+.abba-identification h2, .abba-product h2, .abba-fit h2, .abba-guarantee h2, .abba-faq h2 { font-size: clamp(38px, 4.2vw, 58px); line-height: 1.04; margin: 12px 0 24px; font-weight: 600; letter-spacing: -.02em; }
+.abba-situations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 38px; }
+.abba-situation { border: 1px solid var(--abba-line); background: rgba(255,255,255,.58); border-radius: 18px; padding: 25px; position: relative; }
+.abba-situation > span { font: 600 62px/1 "Cormorant Garamond",serif; color: rgba(168,95,57,.28); position: absolute; top: 8px; left: 14px; }
+.abba-situation p { position: relative; margin: 23px 0 0; font-size: 14px; color: #44514c; }
+.abba-empathy { max-width: 750px; margin: 36px auto 0; text-align: center; font-size: 17px; }
+
+.abba-method { background: var(--abba-green-900); color: white; }
+.abba-section-heading { max-width: 760px; margin: 0 auto 44px; }
+.abba-section-heading h2, .abba-caligraphy h2, .abba-brand-section h2, .abba-offer h2, .abba-final h2 { font-size: clamp(40px,4.6vw,64px); line-height: 1.02; margin: 12px 0 16px; font-weight: 600; }
+.abba-section-heading p { margin: 0; color: var(--abba-muted); }
+.abba-method .abba-section-heading p { color: rgba(255,255,255,.62); }
+.abba-method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.abba-method-card { border: 1px solid rgba(227,200,136,.18); background: rgba(255,255,255,.035); padding: 28px; border-radius: 22px; min-height: 250px; }
+.abba-method-card span { font-family: "Cormorant Garamond",serif; font-size: 38px; color: var(--abba-gold-soft); }
+.abba-method-card h3 { font-size: 31px; margin: 34px 0 8px; }
+.abba-method-card p { margin: 0; color: rgba(255,255,255,.63); font-size: 13px; }
+
+.abba-product { background: #fbf8f1; }
+.abba-product-intro { display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: end; margin-bottom: 38px; }
+.abba-product-intro p { color: var(--abba-muted); max-width: 730px; }
+.abba-stat-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.abba-stat-pair div { border: 1px solid var(--abba-line); border-radius: 18px; padding: 20px; display: grid; }
+.abba-stat-pair strong { font: 600 34px/1 "Cormorant Garamond",serif; color: var(--abba-green-800); }
+.abba-stat-pair span { font-size: 10px; line-height: 1.45; color: var(--abba-muted); margin-top: 8px; }
+.abba-preview-strip { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 15px; align-items: start; }
+.abba-preview-strip.compact { grid-template-columns: repeat(8, minmax(0,1fr)); gap: 10px; }
+.abba-preview-card { padding: 0; border: 0; background: none; position: relative; cursor: zoom-in; border-radius: 12px; overflow: hidden; box-shadow: 0 16px 36px rgba(17, 48, 39, .12); transition: transform .24s ease, box-shadow .24s ease; }
+.abba-preview-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(17, 48, 39, .19); }
+.abba-preview-card img { width: 100%; display: block; aspect-ratio: 210/297; object-fit: cover; }
+.abba-preview-zoom { position: absolute; bottom: 8px; left: 8px; right: 8px; border-radius: 9px; background: rgba(6,25,20,.86); color: white; min-height: 32px; display: flex; gap: 6px; align-items: center; justify-content: center; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; opacity: 0; transform: translateY(8px); transition: all .2s ease; }
+.abba-preview-card:hover .abba-preview-zoom { opacity: 1; transform: none; }
+.abba-caption { text-align: center; margin: 18px 0 0; font-size: 11px; color: var(--abba-muted); }
+
+.abba-shalom { background: linear-gradient(145deg, var(--abba-green-950), var(--abba-green-800)); color: white; }
+.abba-shalom-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: center; }
+.abba-shalom-grid h2 { font-size: clamp(42px,4.7vw,64px); margin: 12px 0 20px; line-height: 1; }
+.abba-shalom-grid p { color: rgba(255,255,255,.68); }
+.abba-shalom-card { aspect-ratio: 1/1.06; border-radius: 190px 190px 28px 28px; border: 1px solid rgba(227,200,136,.42); background: rgba(4,21,16,.42); display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 0 90px rgba(0,0,0,.18); }
+.abba-hebrew { font-size: clamp(72px,8vw,115px); color: var(--abba-gold-soft); line-height: 1; }
+.abba-shalom-card strong { margin-top: 18px; letter-spacing: .24em; font-size: 11px; }
+.abba-mini-line { width: 52px; height: 1px; background: var(--abba-gold); margin: 18px 0; }
+.abba-shalom-card p { margin: 0; font-size: 12px; }
+.abba-soft-note { display: flex; align-items: flex-start; gap: 10px; margin-top: 25px; padding: 16px 18px; border-left: 2px solid var(--abba-gold); background: rgba(255,255,255,.05); font-size: 12px; color: rgba(255,255,255,.76); }
+.abba-soft-note svg { color: var(--abba-gold-soft); flex: 0 0 auto; }
+
+.abba-caligraphy { background: #0c241e; color: white; position: relative; overflow: hidden; }
+.abba-caligraphy::before { content: "אבג"; position: absolute; right: -50px; top: -90px; font: 600 270px/1 "Noto Serif Hebrew",serif; color: rgba(227,200,136,.035); }
+.abba-caligraphy-head { display: grid; grid-template-columns: 1fr 220px; gap: 60px; align-items: center; margin-bottom: 42px; }
+.abba-bonus-pill { display: inline-flex; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(227,200,136,.38); color: var(--abba-gold-soft); font-size: 9px; font-weight: 800; letter-spacing: .16em; }
+.abba-caligraphy h2 span { color: var(--abba-gold-soft); }
+.abba-caligraphy-copy > p { max-width: 780px; color: rgba(255,255,255,.68); }
+.abba-cali-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; margin-top: 25px; }
+.abba-cali-features span { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.78); font-size: 12px; }
+.abba-cali-features svg { color: var(--abba-gold-soft); }
+.abba-heart-note { margin-top: 26px; display: flex; gap: 10px; align-items: flex-start; padding: 17px; border-radius: 14px; background: rgba(255,255,255,.05); color: rgba(255,255,255,.67); font-size: 12px; }
+.abba-heart-note svg { color: var(--abba-gold-soft); flex: 0 0 auto; }
+.abba-cali-number { width: 210px; aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(227,200,136,.34); display: grid; place-content: center; text-align: center; background: rgba(0,0,0,.13); }
+.abba-cali-number strong { font: 600 72px/1 "Cormorant Garamond",serif; color: var(--abba-gold-soft); }
+.abba-cali-number span { font-size: 10px; color: rgba(255,255,255,.56); margin-top: 5px; }
+.light-caption { color: rgba(255,255,255,.45); }
+
+.abba-bonuses { background: var(--abba-cream); }
+.abba-bonus-layout { display: grid; grid-template-columns: .92fr 1.08fr; gap: 45px; align-items: start; }
+.abba-kit-wrap { position: sticky; top: 30px; min-height: 600px; display: grid; place-items: center; }
+.abba-kit-wrap img { width: 100%; position: relative; z-index: 2; filter: drop-shadow(0 28px 45px rgba(22,52,43,.15)); }
+.abba-kit-glow { position: absolute; width: 72%; height: 72%; border-radius: 50%; background: radial-gradient(circle, rgba(196,154,75,.17), transparent 66%); }
+.abba-bonus-list { display: grid; gap: 12px; }
+.abba-bonus-row { display: grid; grid-template-columns: 48px 1fr; gap: 17px; padding: 21px; border-radius: 18px; border: 1px solid var(--abba-line); background: rgba(255,255,255,.52); }
+.abba-bonus-row.featured { border-color: rgba(196,154,75,.55); background: linear-gradient(140deg, rgba(255,255,255,.82), rgba(236,220,186,.5)); box-shadow: 0 16px 40px rgba(25,55,46,.09); }
+.abba-bonus-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; background: var(--abba-green-900); color: var(--abba-gold-soft); }
+.abba-bonus-tag { font-size: 8px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--abba-copper); }
+.abba-bonus-row h3 { margin: 2px 0 4px; font-size: 27px; line-height: 1; }
+.abba-bonus-row p { margin: 0; font-size: 12px; color: var(--abba-muted); }
+
+.abba-fit { background: #fbf8f1; }
+.abba-fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.abba-fit-card { border: 1px solid var(--abba-line); background: white; border-radius: 25px; padding: 42px; }
+.abba-fit-card.dark { background: var(--abba-green-900); color: white; border-color: transparent; }
+.abba-fit-card.dark h2 { color: white; }
+.abba-fit-card ul { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 14px; }
+.abba-fit-card li { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.55; }
+.abba-fit-card li svg { color: var(--abba-copper); flex: 0 0 auto; margin-top: 1px; }
+.abba-fit-card.dark li { color: rgba(255,255,255,.72); }
+.abba-fit-card.dark li svg { color: var(--abba-gold-soft); }
+.abba-fit-card.dark > p { color: rgba(255,255,255,.58); font-size: 12px; margin-top: 30px; }
+
+.abba-brand-section { background: var(--abba-green-950); color: white; }
+.abba-brand-grid { display: grid; grid-template-columns: 280px 1fr; gap: 70px; align-items: center; }
+.abba-brand-seal { width: 270px; aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(227,200,136,.25); display: grid; place-items: center; background: radial-gradient(circle, rgba(227,200,136,.09), transparent 65%); }
+.abba-brand-seal img { width: 120px; filter: brightness(0) invert(1); }
+.abba-brand-section p { color: rgba(255,255,255,.65); max-width: 760px; }
+.abba-brand-section blockquote { margin: 28px 0 0; color: var(--abba-gold-soft); font-size: 28px; font-style: italic; }
+
+.abba-offer { background: #f2eadc; }
+.abba-offer-card { border-radius: 32px; background: linear-gradient(135deg, var(--abba-green-950), var(--abba-green-800)); color: white; display: grid; grid-template-columns: 1.12fr .88fr; overflow: hidden; box-shadow: var(--abba-shadow); }
+.abba-offer-copy { padding: 58px; }
+.abba-offer-copy > p { color: rgba(255,255,255,.65); max-width: 650px; }
+.abba-offer-stack { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; }
+.abba-offer-stack span { display: flex; gap: 8px; align-items: flex-start; color: rgba(255,255,255,.75); font-size: 11px; line-height: 1.5; }
+.abba-offer-stack svg { color: var(--abba-gold-soft); flex: 0 0 auto; }
+.abba-offer-buy { background: rgba(0,0,0,.16); padding: 34px 45px 45px; display: flex; flex-direction: column; align-items: center; text-align: center; border-left: 1px solid rgba(227,200,136,.15); }
+.abba-offer-buy img { width: 250px; max-height: 245px; object-fit: contain; filter: drop-shadow(0 20px 25px rgba(0,0,0,.28)); }
+.abba-one-time { font-size: 8px; letter-spacing: .18em; color: rgba(255,255,255,.48); margin-top: 6px; }
+.abba-price { display: flex; align-items: flex-start; justify-content: center; color: var(--abba-gold-soft); margin: 3px 0 15px; }
+.abba-price small { font-size: 18px; margin-top: 15px; margin-right: 4px; }.abba-price strong { font: 600 78px/1 "Cormorant Garamond",serif; }.abba-price sup { font: 600 30px/1 "Cormorant Garamond",serif; margin-top: 13px; }
+.abba-secure { display: flex; gap: 8px; align-items: center; margin-top: 16px; color: rgba(255,255,255,.52); text-align: left; font-size: 9px; line-height: 1.5; }
+.abba-secure svg { color: var(--abba-gold-soft); }
+
+.abba-guarantee { background: white; }
+.abba-guarantee-icon { margin: 0 auto 14px; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: rgba(18,62,50,.08); color: var(--abba-green-800); }
+.abba-guarantee p { color: var(--abba-muted); max-width: 700px; margin: 0 auto; }
+.abba-faq { background: #f8f4eb; }
+.abba-faq-list { display: grid; gap: 10px; }
+.abba-faq-item { background: rgba(255,255,255,.62); border: 1px solid var(--abba-line); border-radius: 16px; padding: 0 22px; }
+.abba-faq-item summary { min-height: 65px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 700; font-size: 13px; list-style: none; }
+.abba-faq-item summary::-webkit-details-marker { display: none; }
+.abba-faq-item summary span { width: 29px; height: 29px; border-radius: 50%; background: rgba(18,62,50,.08); display: grid; place-items: center; color: var(--abba-green-800); font-size: 18px; transition: transform .2s; }
+.abba-faq-item[open] summary span { transform: rotate(45deg); }
+.abba-faq-item p { margin: 0 0 20px; color: var(--abba-muted); font-size: 12px; }
+
+.abba-final { background: var(--abba-green-950); color: white; position: relative; overflow: hidden; }
+.abba-final-letter { position: absolute; font: 600 520px/1 "Noto Serif Hebrew",serif; color: rgba(227,200,136,.035); left: 50%; top: 46%; transform: translate(-50%,-50%); }
+.abba-hebrew-small { color: var(--abba-gold-soft); font-size: 25px; }
+.abba-final p { color: rgba(255,255,255,.65); max-width: 650px; margin: 0 auto 28px; }
+.abba-footer { min-height: 130px; background: #04130f; display: flex; align-items: center; justify-content: space-between; padding: 0 max(30px, calc((100vw - 1180px)/2)); color: rgba(255,255,255,.45); font-size: 10px; }
+.footer-brand strong { color: white; }.footer-brand span { color: rgba(255,255,255,.5); }
+
+.abba-lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(2,12,9,.92); backdrop-filter: blur(9px); display: grid; place-items: center; padding: 32px; cursor: zoom-out; }
+.abba-lightbox img { max-width: min(920px, 92vw); max-height: 91vh; object-fit: contain; border-radius: 10px; box-shadow: 0 35px 90px rgba(0,0,0,.45); cursor: default; }
+.abba-lightbox-close { position: fixed; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.08); color: white; display: grid; place-items: center; cursor: pointer; }
+
+[data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+[data-reveal].is-visible { opacity: 1; transform: none; }
+.abba-mobile-cta { display: none; }
+
+@media (max-width: 1000px) {
+  .abba-hero-grid { grid-template-columns: 1fr; gap: 15px; padding-top: 45px; }
+  .abba-hero-copy { text-align: center; }
+  .abba-hero-copy .abba-lead { margin-left: auto; margin-right: auto; }
+  .abba-hero-points, .abba-hero-buy { justify-content: center; }
+  .abba-hero-visual { min-height: 480px; }
+  .abba-hero-art { width: 100%; opacity: .25; }
+  .abba-hero::after { background: rgba(3,17,13,.82); }
+  .abba-situations { grid-template-columns: 1fr; }
+  .abba-method-grid { grid-template-columns: 1fr 1fr; }
+  .abba-product-intro { grid-template-columns: 1fr; gap: 20px; }
+  .abba-preview-strip { grid-template-columns: repeat(5, 230px); overflow-x: auto; padding: 10px 2px 22px; scroll-snap-type: x mandatory; }
+  .abba-preview-strip.compact { grid-template-columns: repeat(8, 190px); }
+  .abba-preview-card { scroll-snap-align: start; }
+  .abba-shalom-grid, .abba-bonus-layout, .abba-fit-grid, .abba-brand-grid, .abba-offer-card { grid-template-columns: 1fr; }
+  .abba-shalom-card { max-width: 500px; width: 100%; margin: 0 auto; }
+  .abba-caligraphy-head { grid-template-columns: 1fr; }
+  .abba-cali-number { display: none; }
+  .abba-kit-wrap { position: relative; min-height: 400px; }
+  .abba-brand-seal { margin: 0 auto; }
+  .abba-brand-section .abba-brand-grid > div:last-child { text-align: center; }
+  .abba-offer-buy { border: 0; border-top: 1px solid rgba(227,200,136,.15); }
+}
+
+@media (max-width: 680px) {
+  .abba-section { padding: 68px 0; }
+  .abba-container, .abba-container.narrow, .abba-nav, .abba-hero-grid { width: min(100% - 28px, 1180px); }
+  .abba-nav { padding-top: 18px; }.abba-nav-link { display: none; }
+  .abba-brand strong { font-size: 18px; }.abba-brand-mark { width: 27px; height: 35px; }
+  .abba-hero { min-height: auto; padding-bottom: 55px; }
+  .abba-hero-grid { min-height: 0; padding-top: 34px; padding-bottom: 0; }
+  .abba-hero h1 { font-size: clamp(43px, 13vw, 60px); }
+  .abba-lead { font-size: 16px; }
+  .abba-hero-points { display: grid; justify-items: start; width: fit-content; margin: 24px auto; }
+  .abba-hero-buy { flex-direction: column; gap: 15px; }
+  .abba-hero-visual { min-height: 390px; }.abba-book { width: 90%; }.card-one { left: -2%; top: 16%; }.card-two { right: -1%; bottom: 11%; }
+  .abba-section-heading h2, .abba-caligraphy h2, .abba-brand-section h2, .abba-offer h2, .abba-final h2, .abba-identification h2, .abba-product h2, .abba-fit h2, .abba-guarantee h2, .abba-faq h2 { font-size: 39px; }
+  .abba-method-grid { grid-template-columns: 1fr; }.abba-method-card { min-height: auto; }.abba-method-card h3 { margin-top: 18px; }
+  .abba-stat-pair { grid-template-columns: 1fr 1fr; }
+  .abba-shalom-grid { gap: 42px; }.abba-shalom-card { max-width: 340px; }
+  .abba-cali-features { grid-template-columns: 1fr; }
+  .abba-bonus-row { grid-template-columns: 42px 1fr; padding: 17px; }.abba-bonus-icon { width: 42px; height: 42px; }.abba-bonus-row h3 { font-size: 24px; }
+  .abba-kit-wrap { min-height: 270px; }
+  .abba-fit-card { padding: 28px; }
+  .abba-brand-seal { width: 210px; }.abba-brand-seal img { width: 92px; }
+  .abba-offer-copy { padding: 34px 25px; }.abba-offer-stack { grid-template-columns: 1fr; }.abba-offer-buy { padding: 25px 24px 40px; }
+  .abba-footer { padding: 35px 20px 110px; flex-direction: column; gap: 20px; text-align: center; }
+  .abba-mobile-cta { display: flex; position: fixed; z-index: 80; left: 10px; right: 10px; bottom: 10px; min-height: 70px; border-radius: 18px; background: rgba(6,27,21,.95); backdrop-filter: blur(12px); border: 1px solid rgba(227,200,136,.2); padding: 10px 10px 10px 16px; align-items: center; justify-content: space-between; gap: 10px; box-shadow: 0 18px 50px rgba(0,0,0,.25); }
+  .abba-mobile-cta > div { display: grid; color: white; }.abba-mobile-cta > div span { font-size: 8px; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .1em; }.abba-mobile-cta > div strong { font: 600 25px/1.2 "Cormorant Garamond",serif; color: var(--abba-gold-soft); }.abba-mobile-cta .abba-cta { min-height: 48px; padding: 0 17px; font-size: 11px; }
+  .abba-preview-zoom { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+  [data-reveal] { opacity: 1; transform: none; }
+}
