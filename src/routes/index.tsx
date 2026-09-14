@@ -66,6 +66,7 @@ export const Route = createFileRoute("/")({
 });
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/3zswdss_1094286";
+const GOOGLE_ADS_ID = "AW-18445909721";
 
 const mainPreview = [
   { src: main01, alt: "Capa interna do Bíblia Além da Tradução" },
@@ -142,8 +143,38 @@ declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
     gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
     __metaPvId?: string;
   }
+}
+
+function ensureGoogleTag() {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
+
+  window.dataLayer = window.dataLayer || [];
+
+  if (!window.gtag) {
+    window.gtag = (...args: unknown[]) => {
+      window.dataLayer?.push(args);
+    };
+    window.gtag("js", new Date());
+  }
+
+  // Evita carregar o gtag.js duas vezes caso o __root.tsx já tenha feito isso.
+  const hasGoogleTagScript = Array.from(document.scripts).some((script) =>
+    script.src.includes("googletagmanager.com/gtag/js"),
+  );
+
+  if (!hasGoogleTagScript) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`;
+    script.dataset.abbaGoogleTag = "1";
+    document.head.appendChild(script);
+  }
+
+  // Ativa a Google tag desta campanha. A compra é confirmada pela integração da Cakto.
+  window.gtag("config", GOOGLE_ADS_ID);
 }
 
 function readCookie(name: string): string | undefined {
@@ -166,12 +197,20 @@ function checkoutWithAttribution() {
   if (typeof window === "undefined") return CHECKOUT_URL;
   const target = new URL(CHECKOUT_URL);
   const current = new URL(window.location.href);
-  ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"].forEach(
-    (key) => {
-      const value = current.searchParams.get(key);
-      if (value) target.searchParams.set(key, value);
-    },
-  );
+  [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_content",
+    "utm_term",
+    "fbclid",
+    "gclid",
+    "gbraid",
+    "wbraid",
+  ].forEach((key) => {
+    const value = current.searchParams.get(key);
+    if (value) target.searchParams.set(key, value);
+  });
   return target.toString();
 }
 
@@ -185,6 +224,8 @@ function trackInitiateCheckout(event: MouseEvent<HTMLAnchorElement>) {
     { value: 17.9, currency: "BRL", content_name: "Bíblia Além da Tradução" },
     { eventID: eventId },
   );
+  // Este evento mede início de checkout. A conversão de COMPRA é disparada pela Cakto
+  // somente após aprovação do pagamento (Google Ads label: bJPkCNyi0_QcENn92NtE).
   window.gtag?.("event", "begin_checkout", {
     currency: "BRL",
     value: 17.9,
@@ -246,6 +287,8 @@ function LandingPage() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
   useEffect(() => {
+    ensureGoogleTag();
+
     const nodes = document.querySelectorAll<HTMLElement>("[data-reveal]");
     const observer = new IntersectionObserver(
       (entries) => {
