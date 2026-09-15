@@ -1,0 +1,40 @@
+ABBA PALAVRA — CONFIGURAÇÃO DO FUNIL ONE-CLICK
+
+FRONT-END
+Bíblia Além da Tradução — R$ 17,90
+
+ORDER BUMP 1 (já existente)
+Guia de Bolso do Hebraico Bíblico — R$ 9,90
+Função: consulta/conveniência.
+
+ORDER BUMP 2
+Caderno de Campo do Estudante Bíblico — R$ 7,90
+Função: registro/organização.
+Produto/checkout Cakto: https://pay.cakto.com.br/cauu6iv_1111131
+IMPORTANTE: como order bump, ele deve ser anexado ao checkout do front-end dentro da Cakto; não precisa virar uma etapa separada no site.
+
+PÓS-COMPRA — ONE-CLICK
+1. Compra do front-end aprovada.
+2. Enviar o comprador para /upsell.
+3. /upsell usa o componente one-click da Cakto.
+   Offer ID: uny6wfr
+   Tipo: upsell
+   Aceite: members_area
+   Recusa: https://bibliaalemdatraducao.abbapalavra.online/downsell
+4. /downsell usa o componente one-click da Cakto.
+   Offer ID: 382t7cp
+   Tipo: downsell
+   Aceite: members_area
+   Recusa: members_area
+
+SCRIPT OFICIAL CAKTO
+https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js
+
+IMPORTANTE
+- Os botões antigos que abriam checkout normal foram removidos das páginas /upsell e /downsell.
+- O aceite das duas ofertas agora usa o botão one-click gerado pela Cakto.
+- No downsell, aceitar ou rejeitar leva para members_area, exatamente como o código gerado no painel.
+- No upsell, rejeitar leva para /downsell.
+- Não disparar Purchase no clique. A compra deve continuar sendo registrada pela Cakto após aprovação.
+- Não mostrar Laboratório 7 para quem comprou Laboratório 21.
+- Sem cronômetro falso, estoque falso ou alegação de que o cliente perderá o produto já comprado.
