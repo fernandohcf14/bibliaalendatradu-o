@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Comece a reconhecer letras, palavras e raízes do Hebraico Bíblico — mesmo partindo do zero. Bíblia Além da Tradução + bônus por R$ 17,90.",
+          "Comece a reconhecer letras, palavras e raízes do Hebraico Bíblico — mesmo partindo do zero. Bíblia Além da Tradução + bônus por R$ 27,90.",
       },
       { property: "og:title", content: "Bíblia Além da Tradução — ABBA PALAVRA" },
       {
@@ -221,14 +221,14 @@ function trackInitiateCheckout(event: MouseEvent<HTMLAnchorElement>) {
   window.fbq?.(
     "track",
     "InitiateCheckout",
-    { value: 17.9, currency: "BRL", content_name: "Bíblia Além da Tradução" },
+    { value: 27.9, currency: "BRL", content_name: "Bíblia Além da Tradução" },
     { eventID: eventId },
   );
   // Este evento mede início de checkout. A conversão de COMPRA é disparada pela Cakto
   // somente após aprovação do pagamento (Google Ads label: bJPkCNyi0_QcENn92NtE).
   window.gtag?.("event", "begin_checkout", {
     currency: "BRL",
-    value: 17.9,
+    value: 27.9,
     items: [{ item_name: "Bíblia Além da Tradução" }],
   });
   void sendMetaEvent({
@@ -310,12 +310,12 @@ function LandingPage() {
       window.fbq?.(
         "track",
         "ViewContent",
-        { value: 17.9, currency: "BRL", content_name: "Bíblia Além da Tradução" },
+        { value: 27.9, currency: "BRL", content_name: "Bíblia Além da Tradução" },
         { eventID: eventId },
       );
       window.gtag?.("event", "view_item", {
         currency: "BRL",
-        value: 17.9,
+        value: 27.9,
         items: [{ item_name: "Bíblia Além da Tradução" }],
       });
       void sendMetaEvent({
@@ -375,7 +375,7 @@ function LandingPage() {
             <div className="abba-hero-buy">
               <CtaButton>Quero começar a reconhecer</CtaButton>
               <div className="abba-price-note">
-                <strong>R$ 17,90</strong>
+                <strong>R$ 27,90</strong>
                 <span>pagamento único • acesso imediato • garantia de 7 dias</span>
               </div>
             </div>
@@ -598,7 +598,7 @@ function LandingPage() {
               ["Vou aprender a falar hebraico moderno?", "Não. O foco é Hebraico Bíblico e leitura inicial, não conversação em hebraico moderno."],
               ["O Caderno de Escrita está incluso?", "Sim. A nova versão do Caderno de Escrita Hebraica 2.0, com 118 páginas, faz parte do pacote como bônus em destaque."],
               ["Consigo usar pelo celular?", "Sim. Os materiais são digitais. Para as páginas de escrita, você também pode imprimir as folhas que quiser praticar à mão."],
-              ["O pagamento é mensal?", "Não. O valor de R$ 17,90 é um pagamento único para esta oferta."],
+              ["O pagamento é mensal?", "Não. O valor de R$ 27,90 é um pagamento único para esta oferta."],
               ["Como recebo o acesso?", "Após a confirmação do pagamento, você recebe as instruções de acesso aos materiais digitais."],
               ["E se eu comprar e perceber que não era o que eu esperava?", "A oferta conta com garantia de 7 dias, conforme as condições informadas no checkout."],
             ].map(([q, a]) => (
@@ -617,7 +617,7 @@ function LandingPage() {
           <span className="abba-hebrew-small" dir="rtl">בְּכָל־דְּרָכֶיךָ דָעֵהוּ</span>
           <h2>Você não precisa saber tudo. Só precisa começar.</h2>
           <p>Comece por uma letra. Depois uma palavra. Depois uma passagem que você já ama — vista com novos olhos.</p>
-          <CtaButton>Quero começar por R$ 17,90</CtaButton>
+          <CtaButton>Quero começar por R$ 27,90</CtaButton>
         </div>
       </section>
 
@@ -630,7 +630,7 @@ function LandingPage() {
       </footer>
 
       <div className="abba-mobile-cta">
-        <div><span>Oferta atual</span><strong>R$ 17,90</strong></div>
+        <div><span>Oferta atual</span><strong>R$ 27,90</strong></div>
         <CtaButton>Quero começar</CtaButton>
       </div>
 

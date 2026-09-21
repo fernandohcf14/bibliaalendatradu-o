@@ -21,7 +21,7 @@ Pacote preparado para substituir a rota atual do projeto Lovable/TanStack.
 
 `https://pay.cakto.com.br/3zswdss_1094286`
 
-Preço exibido: `R$ 17,90`.
+Preço exibido: `R$ 27,90`.
 
 ## Instalação
 

@@ -1,7 +1,7 @@
 ABBA PALAVRA — CONFIGURAÇÃO DO FUNIL ONE-CLICK
 
 FRONT-END
-Bíblia Além da Tradução — R$ 17,90
+Bíblia Além da Tradução — R$ 27,90
 
 ORDER BUMP 1 (já existente)
 Guia de Bolso do Hebraico Bíblico — R$ 9,90

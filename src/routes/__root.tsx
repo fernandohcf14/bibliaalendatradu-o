@@ -138,7 +138,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
                 gtag('event', 'conversion', {
                   'send_to': 'AW-18445909721/bJPkCNyi0_QcENn92NtE',
-                  'value': 17.90,
+                  'value': 27.90,
                   'currency': 'BRL',
                   'transaction_id': transactionId || '',
                   'event_callback': callback
