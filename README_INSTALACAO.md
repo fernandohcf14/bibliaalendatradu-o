@@ -21,7 +21,11 @@ Pacote preparado para substituir a rota atual do projeto Lovable/TanStack.
 
 `https://pay.cakto.com.br/3zswdss_1094286`
 
-Preço exibido: `R$ 27,90`.
+Preço exibido em todos os blocos da landing page: `R$ 27,90`.
+
+Antes de publicar, confirme também no checkout da Cakto que o produto está cadastrado por `R$ 27,90`. O valor da página e o valor do checkout precisam ser iguais.
+
+Google Tag Manager instalado: `GTM-NKQ37HBB`.
 
 ## Instalação
 

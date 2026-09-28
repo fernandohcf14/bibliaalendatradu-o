@@ -568,7 +568,7 @@ function LandingPage() {
             <div className="abba-offer-buy">
               <img src={bookMockup} alt="Bíblia Além da Tradução" />
               <span className="abba-one-time">PAGAMENTO ÚNICO</span>
-              <div className="abba-price"><small>R$</small><strong>17</strong><sup>,90</sup></div>
+              <div className="abba-price"><small>R$</small><strong>27</strong><sup>,90</sup></div>
               <CtaButton>Quero meu acesso agora</CtaButton>
               <div className="abba-secure"><ShieldCheck size={18} /><span>Compra protegida por 7 dias<br />Acesso digital após confirmação</span></div>
             </div>
